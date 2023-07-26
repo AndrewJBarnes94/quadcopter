@@ -90,19 +90,12 @@ class Quadcopter:
       current_target = self.find_target_location()
 
       if current_target != (2, 2):
-          # Calculate pitch difference
-          
-              pitch_diff = current_target[0] - 2
-        
-              #pitch_diff = 2 - current_target[0]
-          
-          # Calculate roll difference
-          
-              roll_diff = current_target[1] - 2
-         
-              #roll_diff = 2 - current_target[1]
+        # Calculate pitch difference
+            pitch_diff = current_target[0] - 2
+        # Calculate roll difference
+            roll_diff = current_target[1] - 2
       else:
-          return f"Pitch: {0}, Roll: {0}"
+        return f"Pitch: {0}, Roll: {0}"
           
       return f"Pitch: {pitch_diff}, Roll: {roll_diff}"      
           
@@ -112,9 +105,11 @@ quadcopter = Quadcopter()
 
 # Continuously follow and display targets
 for _ in range(25):
-    quadcopter.follow()
-    recent_locations = quadcopter.get_recent_locations()
-    print("Recent locations:", recent_locations)
-    simulation = quadcopter.simulate()
-    print(simulation)
-    print("\n")
+  quadcopter.follow()
+
+  recent_locations = quadcopter.get_recent_locations()
+  print("Recent locations:", recent_locations)
+  
+  simulation = quadcopter.simulate()
+  print(simulation)
+  print("\n")
